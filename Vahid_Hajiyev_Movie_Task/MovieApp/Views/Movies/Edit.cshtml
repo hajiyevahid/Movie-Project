@@ -1,0 +1,86 @@
+﻿@model MovieApp.Models.CustomMovie
+@using Microsoft.AspNetCore.Html
+@using System.Text.Encodings.Web
+@using System.Globalization;
+
+@{
+    ViewData["Title"] = @ViewBag.title;
+}
+
+<h3>@ViewBag.title</h3>
+@using (Html.BeginForm("Edit", "Movies",new {Id=Model.Id}, FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    
+    <div  class="col-md-6">
+        <hr />
+        @Html.ValidationSummary(true, "", new {@name="id", @class = "text-danger" })
+        @Html.ValidationSummary(true, "", new {@name="GenreId", @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Title, new { htmlAttributes = new {@name="Title", @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ReleaseDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @{
+                    var ReleaseDate = DateTime.Parse(Model.ReleaseDate.ToString()).ToString("yyyy-MM-dd");
+                }
+                 @Html.EditorFor(model => ReleaseDate, new { htmlAttributes = new {@type="date", @name="ReleaseDate", @class = "form-control datetimepicker" } })
+           </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.LongDescription, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.LongDescription, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.LongDescription, "", new {@name="LongDescription", @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Director, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Director, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Director, "", new {@name="Director", @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MainCast, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MainCast, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MainCast, "", new {@name="MainCast", @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.GenreId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <select asp-for="GenreId" class="form-control">
+                    @foreach (var item in ViewBag.gens)
+                    {     if (@item.Id!=Model.GenreId) {
+                            <option value=@item.Id>@item.GenreName</option>
+                        }else{
+                            <option value=@item.Id selected="selected">@item.GenreName</option>       
+                        }
+                    }
+                </select>
+                @Html.ValidationMessageFor(model => model.GenreId, "", new {@name="Genre", @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

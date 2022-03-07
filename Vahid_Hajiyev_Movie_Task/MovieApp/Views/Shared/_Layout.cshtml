@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MovieApp</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/MovieApp.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg  snav-bg">
+        <div class="navbar-brand logo nav-link  navbar-nav mr-auto sfa-col"  >
+            <a class="nav-link text-dark"asp-area="" asp-controller="Home" asp-action="Index"><image class="logo" src="/images/logo-xs.png"/></a>
+        </div>
+ 
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark nav-navss" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark nav-navss" asp-area="" asp-controller="Movies" asp-action="Index">Movies<sup><span class="badge badge-success">@ViewBag.con</span></sup></a>
+                        </li>
+                    </ul>
+                </div>
+        
+    </nav>
+    <div class="container-xl">
+        @RenderBody()
+    </div>
+<div class="wrapper">
+    <section id="section1">
+        <a href="#section3" class="arrow__btn">‹</a>
+        <div class="item" onclick="location.href='https://www.imdb.com/title/tt6385680/';">
+             <img src="/images/1.jpg"
+                alt="I am Mortal">
+        </div>
+        <div class="item" onclick="location.href='https://www.imdb.com/title/tt1877830/';">
+            <img src="/images/2.jpg"
+                alt="The Batman">
+        </div>
+        <div class="item" onclick="location.href='https://www.imdb.com/title/tt14850172/';">
+            <img src="/images/3.jpg"
+                alt="Describe Image">
+        </div>
+        <div class="item" onclick="location.href='https://www.imdb.com/title/tt13694628/';">
+            <img src="/images/4.jpg"
+                alt="">
+        </div>
+        <div class="item" onclick="location.href='https://www.imdb.com/title/tt10323676/';">
+            <img src="/images/5.jpg"
+                alt="Describe Image">
+        </div>
+        <a href="#section2" class="arrow__btn">›</a>
+    </section>
+    <section id="section2">
+        <a href="#section1" class="arrow__btn">‹</a>
+        <div class="item" onclick="location.href='https://www.imdb.com/title/tt14114802/';">
+            <img src="/images/6.jpg"
+                alt="Describe Image">
+        </div>
+        <div class="item" onclick="location.href='https://www.imdb.com/title/tt5181260/';">
+            <img src="/images/7.jpg"
+                alt="Describe Image">
+        </div>
+        <div class="item" onclick="location.href='https://www.imdb.com/title/tt6705162/';">
+            <img src="/images/8.jpg"
+                alt="Describe Image">
+        </div>
+        <div class="item" onclick="location.href='https://www.imdb.com/title/tt6060964/';">
+            <img src="/images/9.jpg"
+                alt="Describe Image">
+        </div>
+        <div class="item" onclick="location.href='https://www.imdb.com/title/tt5108870/';">
+            <img src="/images/10.jpg"
+                alt="Describe Image">
+        </div>
+        <a href="#section3" class="arrow__btn">›</a>
+    </section>
+    <section id="section3">
+        <a href="#section2" class="arrow__btn">‹</a>
+        <div class="item" onclick="location.href='https://www.imdb.com/title/tt4998632/';">
+            <img src="/images/11.jpg"
+                alt="Describe Image">
+        </div>
+        <div class="item" onclick="location.href='https://www.imdb.com/title/tt12412888/';">
+            <img src="/images/12.jpg"
+                alt="Describe Image">
+        </div>
+        <div class="item" onclick="location.href='https://www.imdb.com/title/tt14439896/';">
+            <img src="/images/13.jpg"
+                alt="Describe Image">
+        </div>
+        <div class="item" onclick="location.href='https://www.imdb.com/title/tt11138512/';">
+            <img src="/images/14.jpg"
+                alt="Describe Image">
+        </div>
+        <div class="item" onclick="location.href='https://www.imdb.com/title/tt4061620/';">
+            <img src="/images/15.jpg"
+                alt="Describe Image">
+        </div>
+        <a href="#section1" class="arrow__btn">›</a>
+    </section>
+</div>
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; @DateTime.Now.Year - Vafleex Inc.
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/main.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,183 @@
+body{
+	display: none;
+}
+.snav-bg {
+    /* background-color: #f8ff57; */
+    /* background-color: #e8eb12; */
+	background-color: #ff9e01;
+	height: 10vh;
+    padding-left: 3vw;
+    padding-top: 1vh;
+	z-index: 100;
+	min-height: 48.4px;
+}
+dt.control-label.col-dm-2 {
+	color: darksalmon;
+	font-size: 0.8rem;
+}
+dd.col-sm-10 {
+	color: darkseagreen;
+	font-size: 1.2rem;
+}
+label{
+min-width: 30%;
+}
+h2,h3 {
+	color: #ff9e01;
+}
+div.deta {
+	margin-left: 35px;
+}
+input.btn.btn-primary {
+	margin-top: 14px;
+	/* margin: auto; */
+	margin-left: 42%;
+	background-color: #ff9e01;
+	color: black;
+	font-weight: 700;
+}
+dl{
+	margin-left:15px;
+}
+.sfa-col{
+    color: red!important;
+}
+.logo{
+	width: 10vmax;
+}
+.snav-bg {
+	height: 10vh;
+	margin-bottom: 4vh;
+}
+.nav-navss:hover{
+	transform:scale(1.06);
+}
+.container-xl {
+	margin: 0;
+	min-width: 100% !important;
+}
+th, td, tr {
+	color: white !important;
+}
+a {
+	font: message-box;
+	text-decoration: none !important;
+	color: wheat;
+}
+.nav-link {
+	font-weight: bold;
+}
+form {
+	margin-left: 7%;
+}
+.bg-video-wrap {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	height: 90vh;
+	text-align: center;
+	background: url(https://movieapp20220227050818.azurewebsites.net/images/thebatman.jpg) no-repeat center center;
+}
+label {
+	color: wheat;
+}
+video {
+  min-width: 100%;
+  min-height: 100vh;
+  z-index: 1;
+}
+.overlay {
+  width: 100%;
+  height: 90vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(45deg, rgba(0,0,0,.3) 50%, rgba(0,0,0,.7) 50%);
+  background-size: 3px 3px;
+  z-index: 2;
+}
+h1 {
+  /* text-align: center; */
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 3;
+  max-width: 400px;
+  width: 100%;
+  height: 50px;
+}
+
+.badge {
+	color: red;
+	font-size: 11px;
+}
+
+html {
+	 scroll-behavior: smooth;
+}
+ body {
+	 margin: 0;
+	 background-color: #000;
+}
+ .wrapper {
+	 display: grid;
+	 grid-template-columns: repeat(3, 100%);
+	 overflow: hidden;
+	 scroll-behavior: smooth;
+	 margin-bottom:66px;
+}
+ .wrapper section {
+	 width: 100%;
+	 position: relative;
+	 display: grid;
+	 grid-template-columns: repeat(5, auto);
+	 margin: 20px 0;
+}
+	.wrapper section .item {
+		cursor: pointer;
+		padding: 0 2px;
+		transition: 250ms all;
+	}
+.item img {
+	height: 160px;
+}
+
+h1.hh {
+	color: #e50815;
+}
+	.wrapper section .item:hover {
+		margin: 0 40px;
+		transform: scale(1.2);
+	}
+ .wrapper section a {
+	 position: absolute;
+	 color: #fff;
+	 text-decoration: none;
+	 font-size: 6em;
+	 background: #000;
+	 width: 80px;
+	 padding: 20px;
+	 text-align: center;
+	 z-index: 1;
+}
+ .wrapper section a:nth-of-type(1) {
+	 top: 0;
+	 bottom: 0;
+	 left: 0;
+	 background: linear-gradient(-90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+}
+ .wrapper section a:nth-of-type(2) {
+	 top: 0;
+	 bottom: 0;
+	 right: 0;
+	 background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+}
+ @media only screen and (max-width: 600px) {
+	 a.arrow__btn {
+		 display: none;
+	}
+}
+ 
